@@ -9,12 +9,12 @@ const header = () => {
           <img className="logo" src={icon} />
           <a
             className="navbar-brand"
-            onClick={(e) => {
-              e.preventDefault();
-              window.open("https://celo.org/pt", "_self");
-            }}
+           // onClick={(e) => {
+           //   e.preventDefault();
+           //   window.open("https://celo.org/pt", "_self");
+           //  }}
           >
-            CELO
+            CriptoFans
           </a>
           <button
             className="navbar-toggler"
@@ -48,32 +48,32 @@ const header = () => {
                   
                     className="nav-link"
                   
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.open(
-                        "https://www.gov.br/economia/pt-br/acesso-a-informacao/institucional/planejamento/unidades/spu",
-                        "_blank"
-                      );
-                    }}
+                    //onClick={(e) => {
+                    //  e.preventDefault();
+                    //  window.open(
+                    //    "https://www.gov.br/economia/pt-br/acesso-a-informacao/institucional/planejamento/unidades/spu",
+                    //</li>    "_blank"
+                    //  );
+                   // }}
                     
                   >
-                    SPU
+                    
                   </a>
                 </li>
                 <li className="nav-item">
                   <a
                     className="nav-link"
                   
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.open(
-                        "https://www.serpro.gov.br/",
-                        "_blank"
-                      );
-                    }}
+                    //onClick={(e) => {
+                    //  e.preventDefault();
+                    //  window.open(
+                    //    "https://www.serpro.gov.br/",
+                    //</li>    "_blank"
+                    //  );
+                   // }}
                   
                   >
-                    SERPRO
+                    
                   </a>
                 </li>
 
@@ -81,13 +81,13 @@ const header = () => {
                   <a
                     className="nav-link"
                   
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.open("https://enap.gov.br/pt/", "_blank");
-                    }}
+                    //onClick={(e) => {
+                    //  e.preventDefault();
+                    //  window.open("https://enap.gov.br/pt/", "_blank");
+                   // }}
                   
                   >
-                    ENAP
+                    
                   </a>
                 </li>
               </ul>

@@ -12,7 +12,7 @@ const web3 = createAlchemyWeb3(alchemyKey);
 export const loadContract = async () => {
   // Retornando os dados da rede pelo ID
   // const networkData = MetadevsContract.networks["5777"]; // Para um servidor ganache
-  const networkData = CeloContract.networks["44787"]; // Para um servidor ganache
+  const networkData = CeloContract.networks["5"]; // Para um servidor ganache
 
   const contractABI = CeloContract.abi; // Definindo dados da ABI
   const contractAddress = networkData.address; // Definindo endereço do contrato a partir das configs de rede da ABI
@@ -66,31 +66,32 @@ export const connectWallet = async () => {
 
 // Função para realizar o Mint de um NFTT a partir dos parâmetros
 export const mintNFT = async (
-  geolocalizao,
-  artwork,
-  codigo_rip, 
-  endereco, 
-  conceituacao,
-  tipo_imovel,
-  natureza,
-  processo_principal,
-  memorial,
-  tombo_arquivamento,
-  area_total
+  name,
+  image,
+  description, 
+  price,
+  attributes
+  //conceituacao,
+  //tipo_imovel,
+  //natureza,
+  //processo_principal,
+  //memorial,
+  //tombo_arquivamento,
+  //area_total
   ) => {
   // Construindo os Metadados
   const metadata = {};
-  metadata.image = artwork; // Arte do Projeto (link do IPFS da imagem)
-  metadata.codigo_rip = codigo_rip; // Nome do Lançamento
-  metadata.geolocalizao = geolocalizao; // Nome do Artista
-  metadata.endereco = endereco; // endereco
-  metadata.conceituacao = conceituacao; // conceituacao
-  metadata.tipo_imovel = tipo_imovel; // tipo de imovel
-  metadata.natureza = natureza; // natureza
-  metadata.processo_principal = processo_principal; // processo principal
-  metadata.tombo_arquivamento = tombo_arquivamento; // tombo arquivamento
-  metadata.memorial = memorial; // valor imovel
-  metadata.area_total = area_total; // area total
+  metadata.image = image; // Arte do Projeto (link do IPFS da imagem)
+  metadata.name = name; // Nome do Lançamento ou artista
+  metadata.description = description; // descrição do NFT
+  metadata.price = price; // preço NFT
+ // metadata.conceituacao = conceituacao; // conceituacao
+ // metadata.tipo_imovel = tipo_imovel; // tipo de imovel
+ // metadata.natureza = natureza; // natureza
+ // metadata.processo_principal = processo_principal; // processo principal
+ // metadata.tombo_arquivamento = tombo_arquivamento; // tombo arquivamento
+ // metadata.memorial = memorial; // valor imovel
+ // metadata.area_total = area_total; // area total
   
   
   
@@ -105,8 +106,17 @@ export const mintNFT = async (
     };
   }
 
+  const metadata1 = {};
+  metadata1.image = image; // Arte do Projeto (link do IPFS da imagem)
+  metadata1.name = name; // Nome do Lançamento ou artista
+  metadata1.description = pinataResponse.pinataUrl;
+  metadata1.price = price; // preço NFT
+  
+
+  const pinataResponse1 = await pinJSONToIPFS(metadata1);
+
   // Armazenando o tokenURI (url do ipfs do objeto JSON que contém os metadados do NFT)
-  const tokenURI = pinataResponse.pinataUrl;
+  const tokenURI = pinataResponse1.pinataUrl;
 
   
   // Iniciando contrato e retornando qual o Endereço do Contrato

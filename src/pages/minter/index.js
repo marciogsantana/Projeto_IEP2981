@@ -19,17 +19,17 @@ const Minter = () => {
   const [error, setError] = useState("");
 
   // Variáveis do Formulário
-  const [codigo_rip, setCodigoRip] = useState("");
-  const [artwork, setArtwork] = useState("");
-  const [geolocalizao, setGeolocalizao] = useState("");
-  const [endereco, setEndereco] = useState("");
-  const [conceituacao, setConceituacao] = useState("");
-  const [tipo_imovel, setTipoImovel] = useState("");
-  const [natureza, setNatureza] = useState("");
-  const [processo_principal, setProcessoPrincipal] = useState("");
-  const [tombo_arquivamento, setTomboArquivamento] = useState("");
-  const [memorial, setMemorial] = useState("");
-  const [area_total, setAreaTotal] = useState("");
+  const [name, setName] = useState("");
+  const [image, setImage] = useState("");
+  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState("");
+ // const [conceituacao, setConceituacao] = useState("");
+ // const [tipo_imovel, setTipoImovel] = useState("");
+ // const [natureza, setNatureza] = useState("");
+ // const [processo_principal, setProcessoPrincipal] = useState("");
+ // const [tombo_arquivamento, setTomboArquivamento] = useState("");
+ // const [memorial, setMemorial] = useState("");
+ // const [area_total, setAreaTotal] = useState("");
 
   // Tipos aceitáveis de Arte do Projeto
   const types = ["image/png", "image/jpeg", "image/jpg", "image/gif"];
@@ -109,17 +109,17 @@ const Minter = () => {
     // Passando os parametros para a função utilitária mintNFT
     // e definindo o status da resposta
     const { status } = await mintNFT(
-      geolocalizao,
-      artwork,
-      codigo_rip,
-      endereco, 
-      conceituacao,
-      tipo_imovel,
-      natureza,
-      processo_principal,
-      memorial,
-      tombo_arquivamento,
-      area_total
+      name,
+      image,
+      description,
+      price
+      //conceituacao,
+      //tipo_imovel,
+      //natureza,
+      //processo_principal,
+      //memorial,
+      //tombo_arquivamento,
+      //area_total
       );
     setStatus(status);
   };
@@ -138,7 +138,7 @@ const Minter = () => {
         // se der tudo certo
         if (pinataResponse.success) {
 
-          setArtwork(pinataResponse.pinataUrl);
+          setImage(pinataResponse.pinataUrl);
           setError("")
 
         }
@@ -165,11 +165,11 @@ const Minter = () => {
         <div className="row mt-4">
           <div className="col-md-2 col-sm-0" />
           <div className="col-md-4 col-sm-12 text-md-start text-sm-center  mt-2">
-            <span className="fw-bolder title">Caracterização</span>
-            <span className="title"> de Imóveis</span>
+            <span className="fw-bolder title">Use a sua criatividade</span>
+            <span className="title"> E minte seus NFTS</span>
             <br />
             <span className="text-muted subtitle fw-light text-md-start text-sm-center">
-              Gere o NFT! Imóvel, matrícula ou cadeia dominial!
+              Gere o seu NFT! 
             </span>
           </div>
 
@@ -264,7 +264,7 @@ const Minter = () => {
               <div className="col-12 text-center">
                 <span className="text-muted card-title fw-light ">
                   Verifique todas as todas as informações
-                  depois aperte em "Incorporação Imóvel "
+                  depois aperte em "Mintar seu NFT"
                 </span>
               </div>
             </div>
@@ -278,17 +278,17 @@ const Minter = () => {
 
                   <div className="col-md-8 col-sm-10">
                     <div className="mb-3">
-                      <label htmlFor="artwork" className="form-title">
-                        Imagem do Imovel {artwork ? <span>✅</span> : null}
+                      <label htmlFor="image" className="form-title">
+                        Imagem do NFT {image ? <span>✅</span> : null}
                       </label>
 
                       {/* Caso o upload da Arte do Projeto 
                       já tenha sido concluída, iremos renderizar 
                       um preview da imagem no card */}
-                      {artwork ? (
+                      {image ? (
                         <span>
                           <br />
-                          <img className="image-preview" src={artwork} />
+                          <img className="image-preview" src={image} />
                         </span>
                       ) : null}
 
@@ -299,9 +299,9 @@ const Minter = () => {
                       <br />
 
                       {/* Link do IPFS Hash gerado */}
-                      {artwork ? (
+                      {image ? (
                         <span className="text-muted form-url-subtitle fw-light">
-                          {artwork}
+                          {image}
                         </span>
                       ) : null}
 
@@ -311,10 +311,10 @@ const Minter = () => {
                       <input
                         required
                         className="form-control mt-1"
-                        id="artwork"
+                        id="image"
                         onChange={artworkHandleChange}
                         type="file"
-                        disabled={artwork ? true : false}
+                        disabled={image ? true : false}
                       />
                     </div>
                   </div>
@@ -323,23 +323,23 @@ const Minter = () => {
                 </div>
 
 
-                {/* codigo RIP */}
+                {/* name */}
                 <div className="row">
                   <div className="col-md-2 col-sm-1" />
 
                   <div className="col-md-8  col-sm-10">
                     <div className=" mb-3">
                       <label htmlFor="codigo_rip" className="form-title">
-                        Codigo RIP{" "}
-                        {codigo_rip ? <span>✅</span> : null}
+                        nome do NFT{" "}
+                        {name ? <span>✅</span> : null}
                       </label>
                       <input
                         type="text"
                         required
-                        onChange={(event) => setCodigoRip(event.target.value)}
+                        onChange={(event) => setName(event.target.value)}
                         className="form-control form-control-lg"
-                        id="codigo_rip"
-                        placeholder="Informe o Código RIP"
+                        id="name"
+                        placeholder="Informe o nome do NFT"
                       />
                     </div>
                   </div>
@@ -347,22 +347,22 @@ const Minter = () => {
                   <div className="col-md-2 col-sm-1" />
                 </div>
 
-                {/* Geolocalizao */}
+                {/* descrição */}
                 <div className="row">
                   <div className="col-md-2 col-sm-1" />
 
                   <div className="col-md-8 col-sm-10">
                     <div className=" mb-3">
-                      <label htmlFor="geolocalizao" className="form-title">
-                        Latitude/Longetude {geolocalizao ? <span>✅</span> : null}
+                      <label htmlFor="descrição" className="form-title">
+                        Descrição do NFT {description ? <span>✅</span> : null}
                       </label>
                       <input
                         type="text"
                         required
-                        onChange={(event) => setGeolocalizao(event.target.value)}
+                        onChange={(event) => setDescription(event.target.value)}
                         className="form-control form-control-lg"
-                        id="geolocalizao"
-                        placeholder="Informe Latitude Longetude"
+                        id="description"
+                        placeholder="Informe a descrição"
                       />
                     </div>
                   </div>
@@ -372,23 +372,23 @@ const Minter = () => {
                   <div className="col-md-2 col-sm-1" />
                 </div>
 
-                {/* Endereco*/}
+                {/* Preço*/}
                 <div className="row">
                   <div className="col-md-2 col-sm-1" />
 
                   <div className="col-md-8  col-sm-10">
                     <div className=" mb-3">
                       <label htmlFor="endereco" className="form-title">
-                        Endereço{" "}
-                        {endereco ? <span>✅</span> : null}
+                        Preço{" "}
+                        {price ? <span>✅</span> : null}
                       </label>
                       <input
                         type="text"
                         required
-                        onChange={(event) => setEndereco(event.target.value)}
+                        onChange={(event) => setPrice(event.target.value)}
                         className="form-control form-control-lg"
-                        id="endereco"
-                        placeholder="Informe o endereço"
+                        id="price"
+                        placeholder="Informe o preço Ethereum"
                       />
                     </div>
                   </div>
@@ -397,179 +397,8 @@ const Minter = () => {
                 </div>
 
 
-
-                {/* Tipo de Imóvel*/}
-                <div className="row">
-                  <div className="col-md-2 col-sm-1" />
-
-                  <div className="col-md-8  col-sm-10">
-                    <div className=" mb-3">
-                      <label htmlFor="tipo_imovel" className="form-title">
-                        Tipo de Imóvel{" "}
-                        {tipo_imovel ? <span>✅</span> : null}
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        onChange={(event) => setTipoImovel(event.target.value)}
-                        className="form-control form-control-lg"
-                        id="tipo_imovel"
-                        placeholder="Informe o Tipo de Imóvel"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="col-md-2 col-sm-1" />
-                </div>
-
-                {/*Processo Principal */}
-                <div className="row">
-                  <div className="col-md-2 col-sm-1" />
-
-                  <div className="col-md-8  col-sm-10">
-                    <div className=" mb-3">
-                      <label htmlFor="processo_principal" className="form-title">
-                        Processo Principal{" "}
-                        {processo_principal ? <span>✅</span> : null}
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        onChange={(event) => setProcessoPrincipal(event.target.value)}
-                        className="form-control form-control-lg"
-                        id="processo_principal"
-                        placeholder="Informe o processo principal"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="col-md-2 col-sm-1" />
-                </div>
-
-
-
-                {/*Tombo/Arquivamento */}
-                <div className="row">
-                  <div className="col-md-2 col-sm-1" />
-
-                  <div className="col-md-8  col-sm-10">
-                    <div className=" mb-3">
-                      <label htmlFor="tombo_arquivamento" className="form-title">
-                        Tombo/Arquivamento{" "}
-                        {tombo_arquivamento ? <span>✅</span> : null}
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        onChange={(event) => setTomboArquivamento(event.target.value)}
-                        className="form-control form-control-lg"
-                        id="tombo_arquivamento"
-                        placeholder="Tombo/Arquivamento ?"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="col-md-2 col-sm-1" />
-                </div>
-
-
-                {/* Conceituacao*/}
-                <div className="row">
-                  <div className="col-md-2 col-sm-1" />
-
-                  <div className="col-md-8  col-sm-10">
-                    <div className=" mb-3">
-                      <label htmlFor="conceituacao" className="form-title">
-                        Conceituação{" "}
-                        {conceituacao ? <span>✅</span> : null}
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        onChange={(event) => setConceituacao(event.target.value)}
-                        className="form-control form-control-lg"
-                        id="conceituacao"
-                        placeholder="Informe a Conceitução"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="col-md-2 col-sm-1" />
-                </div>
-
-                {/*Natureza */}
-                <div className="row">
-                  <div className="col-md-2 col-sm-1" />
-
-                  <div className="col-md-8  col-sm-10">
-                    <div className=" mb-3">
-                      <label htmlFor="natureza" className="form-title">
-                        Natureza{" "}
-                        {natureza ? <span>✅</span> : null}
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        onChange={(event) => setNatureza(event.target.value)}
-                        className="form-control form-control-lg"
-                        id="natureza"
-                        placeholder="Informe a Natureza"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="col-md-2 col-sm-1" />
-                </div>
-
-                {/*Memorial do Terreno (União) */}
-                <div className="row">
-                  <div className="col-md-2 col-sm-1" />
-
-                  <div className="col-md-8  col-sm-10">
-                    <div className=" mb-3">
-                      <label htmlFor="memorial" className="form-title">
-                        Memorial do Terreno{" "}
-                        {memorial ? <span>✅</span> : null}
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        onChange={(event) => setMemorial(event.target.value)}
-                        className="form-control form-control-lg"
-                        id="memorial"
-                        placeholder="Informe o Memorial do Terreno"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="col-md-2 col-sm-1" />
-                </div>
-
-                {/*Área Total Construída (m²): */}
-                <div className="row">
-                  <div className="col-md-2 col-sm-1" />
-
-                  <div className="col-md-8  col-sm-10">
-                    <div className=" mb-3">
-                      <label htmlFor="area_total" className="form-title">
-                        Area Total (m²) {" "}
-                        {area_total ? <span>✅</span> : null}
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        onChange={(event) => setAreaTotal(event.target.value)}
-                        className="form-control form-control-lg"
-                        id="area_total"
-                        placeholder="Informe a Área Total Construída (m²)"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="col-md-2 col-sm-1" />
-                </div>
-
-
+      
+           
                 {/* BOTÃO DE MINT */}
                 <div className="row">
                   <div className="col-md-2 col-sm-1" />
@@ -579,13 +408,13 @@ const Minter = () => {
                     (link do IPFS gerado e carteira conectada) o botão
                     será habilitado, caso contrário continua deshabilitado
                     por padrão */}
-                    {isConnected && artwork && geolocalizao && codigo_rip ? (
+                    {isConnected && image && name && description ? (
                       <span onClick={onMintPressed} className="btn btn-sm">
-                        Incorporação Imóvel
+                        Mintar NFT
                       </span>
                     ) : (
                       <button className="btn btn-sm" disabled>
-                        Incorporação Imóvel (carteira MetaMask não conectada)
+                        Mintar NFT (carteira MetaMask não conectada)
                       </button>
                     )}
                   </div>
