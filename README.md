@@ -1,19 +1,18 @@
-# Projeto Hackthon Celo
+# Projeto ERC 2981
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/marciogsantana/hackathon_celo/blob/main/LICENCE) 
 
 # Sobre o projeto
 
-### E se no futuro for possível….
-- Registrar um grande volume de imovéis de modo mais fácil?
-- Comunicar de forma transparente atividades e ações entre muitos órgãos?
-- Trazer maior transparência aos processos internos?
-- Monitorar futuras ações envolvendo tais propriedades?
+Este projeto tem o objetivo de implementar um contrato
+ERC 721 e o ERC2981 para adicionar Royalty ao contrato 
+utilizado para fazer o mint dos NFTs 
 
-### O Futuro Chegou!! Este projeto implementa:
 
-- Coleta de dados via SPU Net. 
-- Registro em blockchain usando o protocolo erc721.
-- Emissão de títulos com força de escritura pública a partir de informações onchain.
+### Funcionamento
+
+O usuário pode usar a plataforma para fazer o mint dos NFTS,
+quando este NFT for vendido a plataforma recebe 10% do valor
+de venda do NFT a titulo de serviço.
 
 
 
