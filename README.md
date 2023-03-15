@@ -48,7 +48,7 @@ de venda do NFT a titulo de serviço.
 ## Iniciar o projeto
 
 # clonar repositório
-git clone https://github.com/marciogsantana/hackathon_celo.git
+git clone https://github.com/marciogsantana/Projeto_IEP2981.git
 
 ```bash
 
