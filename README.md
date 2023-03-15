@@ -4,7 +4,7 @@
 # Sobre o projeto
 
 Este projeto tem o objetivo de implementar um contrato
-ERC 721 e o ERC2981 para adicionar Royalty ao contrato 
+ERC 721 e o ERC2981 para adicionar Royalties ao contrato 
 utilizado para fazer o mint dos NFTs 
 
 
@@ -17,17 +17,17 @@ de venda do NFT a titulo de serviço.
 
 
 ## Layout Front End
-![Front1](https://github.com/marciogsantana/imagens/blob/main/imagem_front.png) ![Front 2](https://github.com/marciogsantana/imagens/blob/main/imagem_front2.png)
+![Front1](https://github.com/marciogsantana/imagens/blob/main/imagem_trofeu.png) ![Front 2](https://github.com/marciogsantana/imagens/blob/main/imagem_front_nft_2.png)
 
 
-## blockscout da rede alfajores
-![Blockscout](https://github.com/marciogsantana/imagens/blob/main/block.png)  
+## NFT na plataforma Harible
+![harible](https://github.com/marciogsantana/imagens/blob/main/imagem_royaltes_taxa.png)  
 
-## Metados IPFS,
-![IPFS](https://github.com/marciogsantana/imagens/blob/main/metadas_pinata.png)  
+## Visualização  do percentual de Royaltie,
+![harible_](https://github.com/marciogsantana/imagens/blob/main/imagem_royaltes_taxa_2.png)  
 
 ## Imagem IPFS,
-![IPFS Imaggem](https://github.com/marciogsantana/imagens/blob/main/metadas_pinata_imagem.png)  
+![IPFS Imaggem](https://github.com/marciogsantana/imagens/blob/main/Metadados.png)  
 
 
 # Tecnologias utilizadas
@@ -39,7 +39,8 @@ de venda do NFT a titulo de serviço.
 - Ganache (testes rápidos)
 - Pinata
 - Alchemy
-- Redes de testes Alfatores Blockchain Celo
+- Redes de testes Goerli
+- Plataformas de testes Opensea e Rarible
 ## Front end
 - HTML / CSS / JS / TypeScript
 - ReactJS
@@ -60,18 +61,7 @@ inserir as chaves para autenticação
 npm install
 
 # fazer deploy do contrato na rede de testes Alfajores
-truffle migrate --network alfajores --reset
-
-# ao final da execução e esperado um resultado parecido com este
-> contract address:    0x46aaDee37975871e91D6041E8393590199576ED9
-   > block number:        15062764
-   > block timestamp:     1670678418
-   > account:             0x5F17446EA5B8967ad3fC7b649aE3F508fA2a6329
-   > balance:             1.9420483886
-   > gas used:            2338276 (0x23ade4)
-   > gas price:           2.6 gwei
-   > value sent:          0 ETH
-   > total cost:          0.0060795176 ETH
+truffle migrate --network goerli --reset
 
 # acessar pasta SRC
 # cd src
