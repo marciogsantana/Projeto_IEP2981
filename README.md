@@ -14,8 +14,8 @@ O usuário pode usar a plataforma para fazer o mint dos NFTS,
 quando este NFT for vendido a plataforma recebe 10% do valor
 de venda do NFT a titulo de serviço.
 
-## Neste projeto o creator original é o contrato 
-## toda transferência do NFT o contrato recebe o royaltie
+### Neste projeto o creator original é o contrato 
+### toda transferência do NFT o contrato recebe o royaltie
 ![contrato](https://github.com/marciogsantana/imagens/blob/main/Blog_inline_-_NFT_Royalty_Standard__1_.png)  
 
 ## Layout Front End
