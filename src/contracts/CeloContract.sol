@@ -66,6 +66,8 @@ contract CeloContract is ERC721URIStorage, ERC2981ContractWideRoyalties{
         _mint (recipient, newItemId);  // mint ERC721 para mintar realmente o token
 
         _setTokenURI(newItemId, tokenURI); //  para apontar ID novo NFT com URL de metadados
+        
+        price = 1 ether / 10;  // precifica o token
 
         
        // owner seta  o endereço do contrato para receber a comissão sobre as vendas do NFT
