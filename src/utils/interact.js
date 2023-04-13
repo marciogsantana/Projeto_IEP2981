@@ -69,7 +69,8 @@ export const mintNFT = async (
   name,
   image,
   description, 
-  price
+  price,
+  attributes
   //conceituacao,
   //tipo_imovel,
   //natureza,
@@ -105,8 +106,17 @@ export const mintNFT = async (
     };
   }
 
+  const metadata1 = {};
+  metadata1.image = image; // Arte do Projeto (link do IPFS da imagem)
+  metadata1.name = name; // Nome do Lançamento ou artista
+  metadata1.description = pinataResponse.pinataUrl;
+  metadata1.price = price; // preço NFT
+  
+
+  const pinataResponse1 = await pinJSONToIPFS(metadata1);
+
   // Armazenando o tokenURI (url do ipfs do objeto JSON que contém os metadados do NFT)
-  const tokenURI = pinataResponse.pinataUrl;
+  const tokenURI = pinataResponse1.pinataUrl;
 
   
   // Iniciando contrato e retornando qual o Endereço do Contrato
