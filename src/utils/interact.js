@@ -12,7 +12,7 @@ const web3 = createAlchemyWeb3(alchemyKey);
 export const loadContract = async () => {
   // Retornando os dados da rede pelo ID
   // const networkData = MetadevsContract.networks["5777"]; // Para um servidor ganache
-  const networkData = CeloContract.networks["80001"]; // Para um servidor ganache
+  const networkData = CeloContract.networks["5"]; // Para um servidor ganache
 
   const contractABI = CeloContract.abi; // Definindo dados da ABI
   const contractAddress = networkData.address; // Definindo endereço do contrato a partir das configs de rede da ABI
