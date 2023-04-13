@@ -22,7 +22,7 @@ const Minter = () => {
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
   const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("");
+ // const [price, setPrice] = useState("");
  // const [conceituacao, setConceituacao] = useState("");
  // const [tipo_imovel, setTipoImovel] = useState("");
  // const [natureza, setNatureza] = useState("");
@@ -111,8 +111,8 @@ const Minter = () => {
     const { status } = await mintNFT(
       name,
       image,
-      description,
-      price
+      description
+      //price
       //conceituacao,
       //tipo_imovel,
       //natureza,
@@ -372,32 +372,7 @@ const Minter = () => {
                   <div className="col-md-2 col-sm-1" />
                 </div>
 
-                {/* Preço*/}
-                <div className="row">
-                  <div className="col-md-2 col-sm-1" />
-
-                  <div className="col-md-8  col-sm-10">
-                    <div className=" mb-3">
-                      <label htmlFor="endereco" className="form-title">
-                        Preço{" "}
-                        {price ? <span>✅</span> : null}
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        onChange={(event) => setPrice(event.target.value)}
-                        className="form-control form-control-lg"
-                        id="price"
-                        placeholder="Informe o preço Ethereum"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="col-md-2 col-sm-1" />
-                </div>
-
-
-      
+                    
            
                 {/* BOTÃO DE MINT */}
                 <div className="row">

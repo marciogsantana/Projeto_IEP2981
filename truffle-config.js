@@ -43,16 +43,6 @@
 
  require("dotenv").config({ path: ".env" });
  // const { MNEMONIC, PROJECT_ID } = process.env;
-
-var infura_apikey = process.env.INFURA_APIKEY;
-var mnemonic = process.env.MNEMONIC;
-var address = process.env.ADDRESS;
-const PROJECT_ID = "2MQK4W3v3bR4z8m9sgqhI0vR3Tq";
-
-
-
-
-
  
  const HDWalletProvider = require("@truffle/hdwallet-provider");
  
@@ -91,16 +81,27 @@ const PROJECT_ID = "2MQK4W3v3bR4z8m9sgqhI0vR3Tq";
       network_id: "*",       // Any network (default: none)
       },
       
-    //   alfajores: {
-    //    provider: function () {
-    //      return new HDWalletProvider(
-    //        process.env.PRIVATE_KEY,
-    //        "https://alfajores-forno.celo-testnet.org"
-    //      );
-    //    },
-    //    network_id: 44787,
-    //    gas: 20000000, //make sure this gas allocation isn't over 20M, which is the max
-    //  },
+       alfajores: {
+        provider: function () {
+          return new HDWalletProvider(
+            process.env.PRIVATE_KEY,
+            "https://alfajores-forno.celo-testnet.org"
+          );
+        },
+        network_id: 44787,
+        gas: 20000000, //make sure this gas allocation isn't over 20M, which is the max
+      },
+
+      polygon: {
+        provider: function () {
+          return new HDWalletProvider(
+            process.env.PRIVATE_KEY,
+            "https://rpc-mumbai.maticvigil.com"
+          );
+        },
+        network_id: 80001,
+        gas: 20000000, //make sure this gas allocation isn't over 20M, which is the max
+      },
 
       
  
@@ -119,13 +120,13 @@ const PROJECT_ID = "2MQK4W3v3bR4z8m9sgqhI0vR3Tq";
      //
      // Useful for deploying to a public network.
      // Note: It's important to wrap the provider as a function to ensure truffle uses a new provider every time.
-    // goerli: {
-    //    provider: () => new HDWalletProvider(mnemonic, `https://goerli.infura.io/v3/${PROJECT_ID}`),
+     // goerli: {
+     //   provider: () => new HDWalletProvider(MNEMONIC, `https://goerli.infura.io/v3/${PROJECT_ID}`),
      //   network_id: 5,       // Goerli's id
      //   confirmations: 2,    // # of confirmations to wait between deployments. (default: 0)
-      //  timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
-      //  skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
-      // },
+     //   timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
+     //   skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
+     // },
      //
      // Useful for private networks
      // private: {
@@ -133,22 +134,7 @@ const PROJECT_ID = "2MQK4W3v3bR4z8m9sgqhI0vR3Tq";
      //   network_id: 2111,   // This network is yours, in the cloud.
      //   production: true    // Treats this network as if it was a public net. (default: false)
      // }
-     goerli: {
-       networkCheckTimeout: 10000,
-          provider: function() {
-          return new HDWalletProvider(mnemonic, "https://goerli.infura.io/v3/"+infura_apikey, 0, 5); // Habilita as 5 primeiras contas da wallet para uso
-        },
-        network_id: '5',
-        from: address
-      }, 
-
-     
-    
-      
-    
    },
-
-   
  
    // Set default mocha options here, use special reporters, etc.
    mocha: {

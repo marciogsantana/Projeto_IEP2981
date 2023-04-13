@@ -59,7 +59,7 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\nimport '@openzeppelin/contracts/utils/introspection/ERC165.sol';\r\n\r\nimport './IERC2981Royalties.sol';\r\n\r\n\r\n\r\n// @dev This is a contract used to add ERC2981 support to ERC721 and 1155\r\nabstract contract ERC2981Base is ERC165, IERC2981Royalties {\r\n    struct RoyaltyInfo {\r\n        address recipient;\r\n        uint24 amount;\r\n    }\r\n\r\n    // @inheritdoc\tERC165\r\n    function supportsInterface(bytes4 interfaceId)\r\n        public\r\n        view\r\n        virtual\r\n        override\r\n        returns (bool)\r\n    {\r\n        return\r\n            interfaceId == type(IERC2981Royalties).interfaceId ||\r\n            super.supportsInterface(interfaceId);\r\n    }\r\n}\r\n",
-  "sourcePath": "C:\\projetos\\pos_puc\\projeto_aplicado\\contrato\\hackathon_celo\\src\\contracts\\ERC2981Base.sol",
+  "sourcePath": "C:\\projetos\\Aplicacoes_blockchain\\NFT_Polygon\\Projeto_Polygon\\src\\contracts\\ERC2981Base.sol",
   "ast": {
     "absolutePath": "project:/src/contracts/ERC2981Base.sol",
     "exportedSymbols": {
@@ -67,21 +67,21 @@
         1793
       ],
       "ERC2981Base": [
-        1948
+        1945
       ],
       "IERC165": [
         1805
       ],
       "IERC2981Royalties": [
-        2030
+        2027
       ]
     },
-    "id": 1949,
+    "id": 1946,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1915,
+        "id": 1912,
         "literals": [
           "solidity",
           "^",
@@ -94,10 +94,10 @@
       {
         "absolutePath": "@openzeppelin/contracts/utils/introspection/ERC165.sol",
         "file": "@openzeppelin/contracts/utils/introspection/ERC165.sol",
-        "id": 1916,
+        "id": 1913,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 1949,
+        "scope": 1946,
         "sourceUnit": 1794,
         "src": "60:64:12",
         "symbolAliases": [],
@@ -106,11 +106,11 @@
       {
         "absolutePath": "project:/src/contracts/IERC2981Royalties.sol",
         "file": "./IERC2981Royalties.sol",
-        "id": 1917,
+        "id": 1914,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 1949,
-        "sourceUnit": 2031,
+        "scope": 1946,
+        "sourceUnit": 2028,
         "src": "128:33:12",
         "symbolAliases": [],
         "unitAlias": ""
@@ -120,25 +120,25 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 1918,
+              "id": 1915,
               "name": "ERC165",
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 1793,
               "src": "277:6:12"
             },
-            "id": 1919,
+            "id": 1916,
             "nodeType": "InheritanceSpecifier",
             "src": "277:6:12"
           },
           {
             "baseName": {
-              "id": 1920,
+              "id": 1917,
               "name": "IERC2981Royalties",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 2030,
+              "referencedDeclaration": 2027,
               "src": "285:17:12"
             },
-            "id": 1921,
+            "id": 1918,
             "nodeType": "InheritanceSpecifier",
             "src": "285:17:12"
           }
@@ -146,10 +146,10 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": false,
-        "id": 1948,
+        "id": 1945,
         "linearizedBaseContracts": [
-          1948,
-          2030,
+          1945,
+          2027,
           1793,
           1805
         ],
@@ -159,16 +159,16 @@
         "nodes": [
           {
             "canonicalName": "ERC2981Base.RoyaltyInfo",
-            "id": 1926,
+            "id": 1923,
             "members": [
               {
                 "constant": false,
-                "id": 1923,
+                "id": 1920,
                 "mutability": "mutable",
                 "name": "recipient",
                 "nameLocation": "348:9:12",
                 "nodeType": "VariableDeclaration",
-                "scope": 1926,
+                "scope": 1923,
                 "src": "340:17:12",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -177,7 +177,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 1922,
+                  "id": 1919,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "340:7:12",
@@ -191,12 +191,12 @@
               },
               {
                 "constant": false,
-                "id": 1925,
+                "id": 1922,
                 "mutability": "mutable",
                 "name": "amount",
                 "nameLocation": "375:6:12",
                 "nodeType": "VariableDeclaration",
-                "scope": 1926,
+                "scope": 1923,
                 "src": "368:13:12",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -205,7 +205,7 @@
                   "typeString": "uint24"
                 },
                 "typeName": {
-                  "id": 1924,
+                  "id": 1921,
                   "name": "uint24",
                   "nodeType": "ElementaryTypeName",
                   "src": "368:6:12",
@@ -220,7 +220,7 @@
             "name": "RoyaltyInfo",
             "nameLocation": "317:11:12",
             "nodeType": "StructDefinition",
-            "scope": 1948,
+            "scope": 1945,
             "src": "310:79:12",
             "visibility": "public"
           },
@@ -229,7 +229,7 @@
               1792
             ],
             "body": {
-              "id": 1946,
+              "id": 1943,
               "nodeType": "Block",
               "src": "565:142:12",
               "statements": [
@@ -239,7 +239,7 @@
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     },
-                    "id": 1944,
+                    "id": 1941,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -249,17 +249,17 @@
                         "typeIdentifier": "t_bytes4",
                         "typeString": "bytes4"
                       },
-                      "id": 1939,
+                      "id": 1936,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 1934,
+                        "id": 1931,
                         "name": "interfaceId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1928,
+                        "referencedDeclaration": 1925,
                         "src": "596:11:12",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes4",
@@ -272,14 +272,14 @@
                         "expression": {
                           "arguments": [
                             {
-                              "id": 1936,
+                              "id": 1933,
                               "name": "IERC2981Royalties",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2030,
+                              "referencedDeclaration": 2027,
                               "src": "616:17:12",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_contract$_IERC2981Royalties_$2030_$",
+                                "typeIdentifier": "t_type$_t_contract$_IERC2981Royalties_$2027_$",
                                 "typeString": "type(contract IERC2981Royalties)"
                               }
                             }
@@ -287,11 +287,11 @@
                           "expression": {
                             "argumentTypes": [
                               {
-                                "typeIdentifier": "t_type$_t_contract$_IERC2981Royalties_$2030_$",
+                                "typeIdentifier": "t_type$_t_contract$_IERC2981Royalties_$2027_$",
                                 "typeString": "type(contract IERC2981Royalties)"
                               }
                             ],
-                            "id": 1935,
+                            "id": 1932,
                             "name": "type",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
@@ -302,7 +302,7 @@
                               "typeString": "function () pure"
                             }
                           },
-                          "id": 1937,
+                          "id": 1934,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -313,11 +313,11 @@
                           "src": "611:23:12",
                           "tryCall": false,
                           "typeDescriptions": {
-                            "typeIdentifier": "t_magic_meta_type_t_contract$_IERC2981Royalties_$2030",
+                            "typeIdentifier": "t_magic_meta_type_t_contract$_IERC2981Royalties_$2027",
                             "typeString": "type(contract IERC2981Royalties)"
                           }
                         },
-                        "id": 1938,
+                        "id": 1935,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -341,11 +341,11 @@
                     "rightExpression": {
                       "arguments": [
                         {
-                          "id": 1942,
+                          "id": 1939,
                           "name": "interfaceId",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1928,
+                          "referencedDeclaration": 1925,
                           "src": "687:11:12",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bytes4",
@@ -361,18 +361,18 @@
                           }
                         ],
                         "expression": {
-                          "id": 1940,
+                          "id": 1937,
                           "name": "super",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 4294967271,
                           "src": "663:5:12",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_super$_ERC2981Base_$1948_$",
+                            "typeIdentifier": "t_type$_t_super$_ERC2981Base_$1945_$",
                             "typeString": "type(contract super ERC2981Base)"
                           }
                         },
-                        "id": 1941,
+                        "id": 1938,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -386,7 +386,7 @@
                           "typeString": "function (bytes4) view returns (bool)"
                         }
                       },
-                      "id": 1943,
+                      "id": 1940,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -407,15 +407,15 @@
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 1933,
-                  "id": 1945,
+                  "functionReturnParameters": 1930,
+                  "id": 1942,
                   "nodeType": "Return",
                   "src": "576:123:12"
                 }
               ]
             },
             "functionSelector": "01ffc9a7",
-            "id": 1947,
+            "id": 1944,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -423,23 +423,23 @@
             "nameLocation": "433:17:12",
             "nodeType": "FunctionDefinition",
             "overrides": {
-              "id": 1930,
+              "id": 1927,
               "nodeType": "OverrideSpecifier",
               "overrides": [],
               "src": "527:8:12"
             },
             "parameters": {
-              "id": 1929,
+              "id": 1926,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1928,
+                  "id": 1925,
                   "mutability": "mutable",
                   "name": "interfaceId",
                   "nameLocation": "458:11:12",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1947,
+                  "scope": 1944,
                   "src": "451:18:12",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -448,7 +448,7 @@
                     "typeString": "bytes4"
                   },
                   "typeName": {
-                    "id": 1927,
+                    "id": 1924,
                     "name": "bytes4",
                     "nodeType": "ElementaryTypeName",
                     "src": "451:6:12",
@@ -463,17 +463,17 @@
               "src": "450:20:12"
             },
             "returnParameters": {
-              "id": 1933,
+              "id": 1930,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1932,
+                  "id": 1929,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1947,
+                  "scope": 1944,
                   "src": "554:4:12",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -482,7 +482,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1931,
+                    "id": 1928,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "554:4:12",
@@ -496,14 +496,14 @@
               ],
               "src": "553:6:12"
             },
-            "scope": 1948,
+            "scope": 1945,
             "src": "424:283:12",
             "stateMutability": "view",
             "virtual": true,
             "visibility": "public"
           }
         ],
-        "scope": 1949,
+        "scope": 1946,
         "src": "244:466:12",
         "usedErrors": []
       }
@@ -516,7 +516,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.10",
-  "updatedAt": "2023-03-14T19:20:07.910Z",
+  "updatedAt": "2023-04-13T14:26:20.693Z",
   "devdoc": {
     "kind": "dev",
     "methods": {

@@ -14,7 +14,7 @@ const header = () => {
            //   window.open("https://celo.org/pt", "_self");
            //  }}
           >
-            CriptoFans
+            Mint polygon
           </a>
           <button
             className="navbar-toggler"
