@@ -17,7 +17,7 @@ contract CeloContract is ERC721URIStorage, ERC2981ContractWideRoyalties{
     Counters.Counter private _tokenIds;
     address public  owner;
 
-    uint256 public tokenPrice;
+    uint256 price = 0;
 
 
 
@@ -26,7 +26,6 @@ contract CeloContract is ERC721URIStorage, ERC2981ContractWideRoyalties{
     constructor() ERC721 ("NFT_SANT", "SANT") {
 
         owner = msg.sender;
-       
 
         
 
@@ -67,10 +66,6 @@ contract CeloContract is ERC721URIStorage, ERC2981ContractWideRoyalties{
         _mint (recipient, newItemId);  // mint ERC721 para mintar realmente o token
 
         _setTokenURI(newItemId, tokenURI); //  para apontar ID novo NFT com URL de metadados
-        
-        //price = 1 ether / 10;  // precifica o token
-
-         tokenPrice = 10 ether;
 
         
        // owner seta  o endereço do contrato para receber a comissão sobre as vendas do NFT
